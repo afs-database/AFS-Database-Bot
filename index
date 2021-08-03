@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 bot.on('ready', () => {
 bot.user.setPresence({ activity: { name: "Phoenix Era", type: "WATCHING" }, status: "online" })
 });
-
+/*
 bot.on('guildMemberAdd', member => {
         
         const welcomeEmbed = new Discord.MessageEmbed()
@@ -36,13 +36,6 @@ bot.on('message', (message) => {
                 message.channel.send('!!!pong'); 
         }, 3000);
         }
-        
-        /*
-        if(msg == '!startinfo') {
-            message.delete();
-            message.author.send('Welcome to Phoenix Era. Type !help to see a list of useful commands. \nType !chatrules to see server rules. \nPlease read the member guide: \nMEMBER GUIDE \n \nAbove all: do not be stupid or act stupid.');
-        }
-        */
         
         if(msg == '!clanrules') {
             message.delete();
@@ -204,14 +197,6 @@ bot.on('message', (message) => {
 	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
 	    }
         }
-        
-        /*
-        if (commando === "!admin!list") {
-            let id = argus[0];
-            let list = message.guild.roles.cache.find(i => i.name === id).members.map(m=>m.user.id).join('\n');
-            message.channel.send(`<@${list}>`);
-        }
-        */
         
         if (commando === "c^n") {
 	    if (message.channel.type != 'dm') {
@@ -862,26 +847,7 @@ bot.on('message', (message) => {
 	    }
         }
         
-        /*
-        if (commandos === "c$m$") {
-            let b = arguss[0];
-            let channelid = message.guild.channels.find('name','event-rsvp');
-            channelid.fetchMessages({limit: 99}).then(msg => {
-            const specMessage = msg.filter(msg => msg.content.includes(b)).map(m=>m.id).join('\n');
-            async function edit() {
-            const message = await channelid.fetchMessage(specMessage);
-            await message.edit('hello').then(function (message) {
-            message.reactions.removeAll()
-            }).catch(function() {
-            });
-            }
-            edit();
-            });
-            message.delete();
-            message.channel.send(`Reactions have been removed.`);
-        }
-        */
         
 });
-
+*/
 bot.login(process.env.BOT_TOKEN);
