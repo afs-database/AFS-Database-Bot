@@ -10,7 +10,7 @@ bot.on('guildMemberAdd', member => {
         const welcomeEmbed = new Discord.MessageEmbed()
         welcomeEmbed.setColor('RANDOM')
         welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Phoenix Era. May any existing deity have mercy on this poor bastard's soul.")
-        member.guild.channels.cache.find(i => i.name === 'official').send(welcomeEmbed)
+        member.guild.channels.cache.find(i => i.name === 'formal').send(welcomeEmbed)
         
 });
 
@@ -19,7 +19,7 @@ bot.on('guildMemberRemove', member => {
         const leaveEmbed = new Discord.MessageEmbed()
         leaveEmbed.setColor('RANDOM')
         leaveEmbed.setDescription(member.user.tag + " has left the server. I never liked that dumbass anyway.")
-        member.guild.channels.cache.find(i => i.name === 'official').send(leaveEmbed)
+        member.guild.channels.cache.find(i => i.name === 'formal').send(leaveEmbed)
 });
 
 bot.on('message', (message) => {
@@ -344,12 +344,12 @@ bot.on('message', (message) => {
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
 	    if (memberlist.includes(',' + nick + ',')) {
-	    message.guild.channels.cache.find(i => i.name === 'official').send(`${nick} has been kicked from the server.`);
+	    message.guild.channels.cache.find(i => i.name === 'formal').send(`${nick} has been kicked from the server.`);
             nickmember.kick();
             message.channel.send(`${nick} has been kicked.`);
 	    } else {
 	    message.channel.send(`${nick} is not a valid nickname of a user in this server. Message of departure has been sent.`);
-	    message.guild.channels.cache.find(i => i.name === 'official').send(`${nick} has left the server and has been purged from my database.\nBE GONE!`);
+	    message.guild.channels.cache.find(i => i.name === 'formal').send(`${nick} has left the server and has been purged from my database.\nBE GONE!`);
 	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
