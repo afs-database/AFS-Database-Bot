@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 bot.on('ready', () => {
 bot.user.setPresence({ activity: { name: "Git Gud", type: "PLAYING" }, status: "online" })
 });
-
+/*
 bot.on('guildMemberAdd', member => {
         
         const welcomeEmbed = new Discord.MessageEmbed()
@@ -21,7 +21,7 @@ bot.on('guildMemberRemove', member => {
         leaveEmbed.setDescription(member.user.tag + " has left the server.")
         member.guild.channels.cache.find(i => i.name === 'formal').send(leaveEmbed)
 });
-
+*/
 bot.on('message', (message) => {
         
         const msg = message.content.toLowerCase();
