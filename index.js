@@ -247,7 +247,7 @@ bot.on('message', (message) => {
 	        //.setURL('https://discord.js.org/')
 	        .setAuthor(author, authorpic, authorpic)
 	        .setDescription(description)
-	        .setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
+	        //.setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
 	        //.addFields(
 		//        { name: 'Regular field title', value: 'Some value here' },
 		//        { name: '\u200B', value: '\u200B' },
@@ -257,7 +257,7 @@ bot.on('message', (message) => {
 	        //.addField('Inline field title', 'Some value here', true)
 	        .setImage(image)
 	        .setTimestamp()
-	        .setFooter(footer, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
+	        .setFooter(footer, '');
 	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
@@ -297,7 +297,7 @@ bot.on('message', (message) => {
 	        //.setURL('https://discord.js.org/')
 	        .setAuthor(nauthor, nauthorpic, nauthorpic)
 	        .setDescription(ndescription)
-	        .setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
+	        //.setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
 	        //.addFields(
 		//        { name: 'Regular field title', value: 'Some value here' },
 		//        { name: '\u200B', value: '\u200B' },
@@ -307,7 +307,7 @@ bot.on('message', (message) => {
 	        //.addField('Inline field title', 'Some value here', true)
 	        .setImage(nimage)
 	        .setTimestamp()
-	        .setFooter(nfooter, 'https://cdn.discordapp.com/emojis/417837304036589568.png?v=1');
+	        .setFooter(nfooter, '');
 	    channelid.messages.fetch({limit: 99}).then(msg => {
             const ospecMessage = msg.filter(msg => msg.embeds[0].description.includes(odescription));
 	    const specMessage = ospecMessage.filter(msg => msg.embeds[0].title.includes(otitle)).map(m=>m.id).join('\n');
