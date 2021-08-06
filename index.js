@@ -242,7 +242,7 @@ bot.on('message', (message) => {
             let channelname = arguss[6];
             
             const exampleEmbed = new Discord.MessageEmbed()
-	        .setColor('#931314')
+	        .setColor('#EB6305')
 	        .setTitle(title)
 	        //.setURL('https://discord.js.org/')
 	        .setAuthor(author, authorpic, authorpic)
@@ -292,7 +292,7 @@ bot.on('message', (message) => {
 	    if (chan == 'audit-log') {
 	    if (chanlist.includes('^' + channelname + '^')) {
 	    const exampleEmbed = new Discord.MessageEmbed()
-	        .setColor('RANDOM')
+	        .setColor('#EB6305')
 	        .setTitle(ntitle)
 	        //.setURL('https://discord.js.org/')
 	        .setAuthor(nauthor, nauthorpic, nauthorpic)
