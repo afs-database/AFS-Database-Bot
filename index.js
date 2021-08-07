@@ -247,7 +247,7 @@ bot.on('message', (message) => {
 	        //.setURL('https://discord.js.org/')
 	        .setAuthor(author, authorpic, authorpic)
 	        .setDescription(description)
-	        .setThumbnail('https://drive.google.com/file/d/1rRWxu1_QSb8Fms3l85Z-SeS6L9kaldTw/view?usp=drivesdk')
+	        //.setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
 	        //.addFields(
 		//        { name: 'Regular field title', value: 'Some value here' },
 		//        { name: '\u200B', value: '\u200B' },
