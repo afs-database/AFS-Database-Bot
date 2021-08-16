@@ -35,7 +35,7 @@ bot.on('message', (message) => {
 	
 	if (command === "cheese") {
 
-            message.channel.send({files: ["https://tenor.com/view/cheese-wallace-and-gromit-gif-11822925"]});
+            message.channel.send({files: ["https://c.tenor.com/hN89U2X0PC4AAAAC/cheese-wallace-and-gromit.gif"]});
         }
 	
         const argus = message.content.trim().split(',');
