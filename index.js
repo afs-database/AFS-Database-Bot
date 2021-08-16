@@ -38,6 +38,21 @@ bot.on('message', (message) => {
             message.channel.send({files: ["https://c.tenor.com/hN89U2X0PC4AAAAC/cheese-wallace-and-gromit.gif"]});
         }
 	
+	if (msg.toString().indexOf("seven")!=-1) {
+
+            message.channel.send({files: ["https://c.tenor.com/867r5xBn3ogAAAAC/monica-friends.gif"]});
+        }
+	
+	if (msg.toString().indexOf("tree")!=-1) {
+
+            message.channel.send({files: ["https://c.tenor.com/q2mE8ylO3FAAAAAS/jean-baptiste-show-ibonek.gif"]});
+        }
+	
+	if (msg.toString().indexOf("chicken")!=-1) {
+
+            message.channel.send({files: ["https://c.tenor.com/lNJB-9zZ9roAAAAS/chicken-shoes.gif"]});
+        }
+	
         const argus = message.content.trim().split(',');
         const commando = argus.shift().toLowerCase();
         
@@ -157,7 +172,7 @@ bot.on('message', (message) => {
             message.channel.send(`${nick} has been kicked.`);
 	    } else {
 	    message.channel.send(`${nick} is not a valid nickname of a user in this server. Message of departure has been sent.`);
-	    message.guild.channels.cache.find(i => i.name === 'formal').send(`${nick} has left the server and has been purged from my database.\nBE GONE!`);
+	    message.guild.channels.cache.find(i => i.name === 'formal').send(`${nick} has left the server and has been purged from my database.`);
 	    }
 	    } else {
 	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
