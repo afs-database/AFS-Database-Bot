@@ -20,10 +20,10 @@ bot.on('guildMemberAdd', member => {
 
 bot.on('guildMemberRemove', member => {
         
-        const leaveEmbed = new Discord.MessageEmbed()
-        leaveEmbed.setColor('RANDOM')
-        leaveEmbed.setDescription(member.user.tag + " has left the server.")
-        member.guild.channels.cache.find(i => i.name === 'formal').send(leaveEmbed)
+        const leaveEmbed = new Discord.MessageEmbed();
+        leaveEmbed.setColor('#EB6305');
+        leaveEmbed.setDescription(member.user.tag + " has left the server.");
+        member.guild.channels.cache.find(i => i.name === 'official').send(leaveEmbed);
 });
 
 bot.on('message', (message) => {
@@ -32,6 +32,11 @@ bot.on('message', (message) => {
 	
         const args = message.content.trim().split(/ +/g);
         const command = args.shift().toLowerCase();
+	
+	if (command === "cheese") {
+
+            message.channel.send({files: ["https://tenor.com/view/cheese-wallace-and-gromit-gif-11822925"]});
+        }
 	
         const argus = message.content.trim().split(',');
         const commando = argus.shift().toLowerCase();
