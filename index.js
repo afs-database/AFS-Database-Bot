@@ -4,14 +4,18 @@ const bot = new Discord.Client();
 bot.on('ready', () => {
 bot.user.setPresence({ activity: { name: "Git Gud", type: "PLAYING" }, status: "online" })
 });
-/*
+
 bot.on('guildMemberAdd', member => {
         
-        const welcomeEmbed = new Discord.MessageEmbed()
-        welcomeEmbed.setColor('RANDOM')
-        welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Lacedaemon.")
-        member.guild.channels.cache.find(i => i.name === 'formal').send(welcomeEmbed)
-        
+        bot.on('guildMemberAdd', member => {
+	var rand = Math.floor(Math.random() * 1000);
+        let setnick = 'helot' + rand;
+        const welcomeEmbed = new Discord.MessageEmbed();
+        welcomeEmbed.setColor('#EB6305');
+        welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Lacedaemon.");
+        member.guild.channels.cache.find(i => i.name === 'formal').send(welcomeEmbed);
+        member.setNickname(setnick);
+});
 });
 
 bot.on('guildMemberRemove', member => {
@@ -21,7 +25,7 @@ bot.on('guildMemberRemove', member => {
         leaveEmbed.setDescription(member.user.tag + " has left the server.")
         member.guild.channels.cache.find(i => i.name === 'formal').send(leaveEmbed)
 });
-*/
+
 bot.on('message', (message) => {
         
         const msg = message.content.toLowerCase();
@@ -341,7 +345,8 @@ bot.on('message', (message) => {
 	    if (chan == 'audit-log') {
 	    if (chanlist.includes('^' + channelname + '^')) {
 	    channelid.messages.fetch({limit: 99}).then(msg => {
-	    const ospecMessage = msg.filter(msg => msg.embeds[0].description.includes(odescription));
+	    const aospecMessage = msg.filter(msg => msg.embeds[0]);
+	    const ospecMessage = aospecMessage.filter(msg => msg.embeds[0].description.includes(odescription));
 	    const specMessage = ospecMessage.filter(msg => msg.embeds[0].title.includes(otitle)).map(m=>m.id).join('\n');
 	    async function del() {
             const message = await channelid.messages.fetch(specMessage);
@@ -416,6 +421,51 @@ bot.on('message', (message) => {
 	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
 	    }
         }
+
+	if (commandos === "dm$e$") {
+	    if (message.channel.type != 'dm') {
+            let nick = arguss[0];
+	    let title = arguss[1];
+            let description = arguss[2];
+            let author = arguss[3];
+	    let authorpic = arguss[4];
+	    let image = arguss[5];
+            let footer = arguss[6];
+            let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
+	    let memberlist = '^' + message.guild.members.cache.map(m=>m.displayName).join('^') + '^';
+	    let chan = message.channel.name;
+	    if (chan == 'audit-log') {
+	    const exampleEmbed = new Discord.MessageEmbed()
+	        .setColor('#EB6305')
+	        .setTitle(title)
+	        //.setURL('https://discord.js.org/')
+	        .setAuthor(author, authorpic, authorpic)
+	        .setDescription(description)
+	        //.setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
+	        //.addFields(
+		//        { name: 'Regular field title', value: 'Some value here' },
+		//        { name: '\u200B', value: '\u200B' },
+		//        { name: 'Inline field title', value: 'Some value here', inline: true },
+		//        { name: 'Inline field title', value: 'Some value here', inline: true },
+	        //)
+	        //.addField('Inline field title', 'Some value here', true)
+	        .setImage(image)
+	        .setTimestamp()
+	        .setFooter(footer, '');
+	    if (memberlist.includes('^' + nick + '^')) {
+	    message.channel.send(`Embed DM has been sent to ${nickmember}.`);
+            nickmember.send(exampleEmbed);
+	    } else {
+	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
+	    }
+	    } else {
+	    message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
+	    }
+	    } else {
+	    message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+	    }
+        }
+	
 
 });
 
