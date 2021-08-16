@@ -33,7 +33,7 @@ bot.on('message', (message) => {
         const args = message.content.trim().split(/ +/g);
         const command = args.shift().toLowerCase();
 	
-	if (command === "cheese") {
+	if (msg.toString().indexOf("cheese")!=-1) {
 
             message.channel.send({files: ["https://c.tenor.com/hN89U2X0PC4AAAAC/cheese-wallace-and-gromit.gif"]});
         }
