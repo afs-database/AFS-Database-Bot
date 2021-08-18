@@ -9,7 +9,7 @@ bot.on('guildMemberAdd', member => {
 	var rand = Math.floor(Math.random() * 1000);
         let setnick = 'helot' + rand;
         const welcomeEmbed = new Discord.MessageEmbed();
-        welcomeEmbed.setColor('#EB6305');
+        welcomeEmbed.setColor('RANDOM');
         welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Lacedaemon.");
         member.guild.channels.cache.find(i => i.name === 'formal').send(welcomeEmbed);
         member.setNickname(setnick);
