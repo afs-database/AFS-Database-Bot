@@ -13,7 +13,7 @@ bot.on('guildMemberAdd', member => {
         welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Lacedaemon.");
         member.guild.channels.cache.find(i => i.name === 'formal').send(welcomeEmbed);
         member.setNickname(setnick);
-	member.addRole(member.guild.roles.find(role => role.name === "Helot"));
+	member.addRole(member.guild.roles.cache.find(role => role.name === "Helot"));
 });
 
 bot.on('guildMemberRemove', member => {
