@@ -15,9 +15,9 @@ bot.on('guildMemberAdd', member => {
         welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Lacedaemon.");
         member.guild.channels.cache.find(i => i.name === 'formal').send(welcomeEmbed);
         member.setNickname(setnick);
+	member.addRole(member.guild.roles.find(role => role.name === "Helot"));
 });
 });
-
 bot.on('guildMemberRemove', member => {
         
         const leaveEmbed = new Discord.MessageEmbed();
@@ -490,3 +490,5 @@ bot.on('message', (message) => {
 });
 
 bot.login(process.env.BOT_TOKEN);
+
+//All credit to Nuqrs
