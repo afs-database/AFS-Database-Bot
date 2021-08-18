@@ -6,8 +6,6 @@ bot.user.setPresence({ activity: { name: "Git Gud", type: "PLAYING" }, status: "
 });
 
 bot.on('guildMemberAdd', member => {
-        
-        bot.on('guildMemberAdd', member => {
 	var rand = Math.floor(Math.random() * 1000);
         let setnick = 'helot' + rand;
         const welcomeEmbed = new Discord.MessageEmbed();
@@ -15,7 +13,7 @@ bot.on('guildMemberAdd', member => {
         welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Lacedaemon.");
         member.guild.channels.cache.find(i => i.name === 'formal').send(welcomeEmbed);
         member.setNickname(setnick);
-	//member.addRole(member.guild.roles.find(role => role.name === "Helot"));
+	member.addRole(member.guild.roles.find(role => role.name === "Helot"));
 });
 
 bot.on('guildMemberRemove', member => {
