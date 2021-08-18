@@ -1,30 +1,34 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
+const { Client, Intents } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 
-bot.on('ready', () => {
-bot.user.setPresence({ activity: { name: "Git Gud", type: "PLAYING" }, status: "online" })
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_BANS, Intents.FLAGS.GUILD_EMOJIS_AND_STICKERS, Intents.FLAGS.GUILD_INTEGRATIONS, Intents.FLAGS.GUILD_WEBHOOKS, Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_INVITES, Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.GUILD_PRESENCES, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.GUILD_MESSAGE_TYPING, Intents.FLAGS.DIRECT_MESSAGES, Intents.FLAGS.DIRECT_MESSAGE_REACTIONS, Intents.FLAGS.DIRECT_MESSAGE_TYPING],
+  partials: ["CHANNEL", "GUILD_MEMBER", "MESSAGE", "REACTION", "USER"]
 });
 
-bot.on('guildMemberAdd', member => {
+client.on('ready', () => {
+client.user.setPresence({ activities: [{ name: "Git Gud", type: "PLAYING" }], status: "online" })
+});
+
+client.on('guildMemberAdd', member => {
 	var rand = Math.floor(Math.random() * 1000);
-        let setnick = 'helot' + rand;
-        const welcomeEmbed = new Discord.MessageEmbed();
-        welcomeEmbed.setColor('RANDOM');
+        let setnick = 'Helot' + rand;
+        const welcomeEmbed = new MessageEmbed();
+        welcomeEmbed.setColor('#EB6305');
         welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Lacedaemon.");
-        member.guild.channels.cache.find(i => i.name === 'formal').send(welcomeEmbed);
+        member.guild.channels.cache.find(i => i.name === 'formal').send({ embeds: [welcomeEmbed] });
         member.setNickname(setnick);
 	member.addRole(member.guild.roles.cache.find(role => role.name === "Helot"));
 });
 
-bot.on('guildMemberRemove', member => {
+client.on('guildMemberRemove', member => {
         
-        const leaveEmbed = new Discord.MessageEmbed();
+        const leaveEmbed = new MessageEmbed();
         leaveEmbed.setColor('#EB6305');
         leaveEmbed.setDescription(member.user.tag + " has left the server.");
-        member.guild.channels.cache.find(i => i.name === 'official').send(leaveEmbed);
+        member.guild.channels.cache.find(i => i.name === 'formal').send({ embeds: [leaveEmbed] });
 });
 
-bot.on('message', (message) => {
+client.on('messageCreate', (message) => {
         
         const msg = message.content.toLowerCase();
 	
@@ -263,7 +267,7 @@ bot.on('message', (message) => {
             let footer = arguss[5];
             let channelname = arguss[6];
             
-            const exampleEmbed = new Discord.MessageEmbed()
+            const exampleEmbed = new MessageEmbed()
 	        .setColor('#EB6305')
 	        .setTitle(title)
 	        //.setURL('https://discord.js.org/')
@@ -284,7 +288,7 @@ bot.on('message', (message) => {
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
 	    if (chanlist.includes('^' + channelname + '^')) {
-	    message.guild.channels.cache.find(i => i.name === channelname).send(exampleEmbed);
+	    message.guild.channels.cache.find(i => i.name === channelname).send({ embeds: [exampleEmbed] });
 	    message.channel.send(`Custom embed has been sent.`);
 	    } else {
 	    message.channel.send(`${channelname} is not a valid channel in this server.`);
@@ -313,7 +317,7 @@ bot.on('message', (message) => {
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
 	    if (chanlist.includes('^' + channelname + '^')) {
-	    const exampleEmbed = new Discord.MessageEmbed()
+	    const exampleEmbed = new MessageEmbed()
 	        .setColor('#EB6305')
 	        .setTitle(ntitle)
 	        //.setURL('https://discord.js.org/')
@@ -335,7 +339,7 @@ bot.on('message', (message) => {
 	    const specMessage = ospecMessage.filter(msg => msg.embeds[0].title.includes(otitle)).map(m=>m.id).join('\n');
             async function edit() {
             const message = await channelid.messages.fetch(specMessage);
-            await message.edit(exampleEmbed);
+            await message.edit({ embeds: [exampleEmbed] });
             }
             edit();
             });
@@ -453,7 +457,7 @@ bot.on('message', (message) => {
 	    let memberlist = '^' + message.guild.members.cache.map(m=>m.displayName).join('^') + '^';
 	    let chan = message.channel.name;
 	    if (chan == 'audit-log') {
-	    const exampleEmbed = new Discord.MessageEmbed()
+	    const exampleEmbed = new MessageEmbed()
 	        .setColor('#EB6305')
 	        .setTitle(title)
 	        //.setURL('https://discord.js.org/')
@@ -472,7 +476,7 @@ bot.on('message', (message) => {
 	        .setFooter(footer, '');
 	    if (memberlist.includes('^' + nick + '^')) {
 	    message.channel.send(`Embed DM has been sent to ${nickmember}.`);
-            nickmember.send(exampleEmbed);
+            nickmember.send({ embeds: [exampleEmbed] });
 	    } else {
 	    message.channel.send(`${nick} is not a valid nickname of a user in this server.`);
 	    }
@@ -487,6 +491,6 @@ bot.on('message', (message) => {
 
 });
 
-bot.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
 
 //All credit to Nuqrs
