@@ -71,7 +71,7 @@ client.on('messageCreate', (message) => {
 	    if (memberlist.includes(',' + nick + ',')) {
 	    if (rolelist.includes(',' + title + ',')) {
 	    nickmember.roles.add(titlerole);
-            message.channel.send(`${nickmember} has received the title of ${titlerole}.`);
+            message.channel.send(`${nickmember} has received the role of ${titlerole}.`);
 	    } else {
 	    message.channel.send(`${title} is not a valid role in this server.`);
 	    }
@@ -99,7 +99,7 @@ client.on('messageCreate', (message) => {
 	    if (memberlist.includes(',' + nick + ',')) {
 	    if (rolelist.includes(',' + title + ',')) {
 	    nickmember.roles.remove(titlerole);
-            message.channel.send(`${nickmember} no longer has the title of ${titlerole}.`);
+            message.channel.send(`${nickmember} no longer has the role of ${titlerole}.`);
 	    } else {
 	    message.channel.send(`${title} is not a valid role in this server.`);
 	    }
