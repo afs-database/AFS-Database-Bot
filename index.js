@@ -17,7 +17,7 @@ client.on('guildMemberAdd', member => {
         welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Lacedaemon.");
         member.guild.channels.cache.find(i => i.name === 'formal').send({ embeds: [welcomeEmbed] });
         member.setNickname(setnick);
-	member.addRole(member.guild.roles.cache.find(role => role.name === "Helot"));
+	member.roles.add(member.guild.roles.cache.find(role => role.name === "Helot"));
 });
 
 client.on('guildMemberRemove', member => {
