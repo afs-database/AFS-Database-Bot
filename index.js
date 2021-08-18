@@ -59,7 +59,7 @@ client.on('messageCreate', (message) => {
         const commando = argus.shift().toLowerCase();
         
         if (commando === "a^r") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let nick = argus[0];
             let title = argus[1];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
@@ -87,7 +87,7 @@ client.on('messageCreate', (message) => {
         }
         
         if (commando === "r^r") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let nick = argus[0];
             let title = argus[1];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
@@ -115,7 +115,7 @@ client.on('messageCreate', (message) => {
         }
         
         if (commando === "c^n") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let nick = argus[0];
             let newnick = argus[1];
 	    let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
@@ -137,7 +137,7 @@ client.on('messageCreate', (message) => {
         }
         
         if (commando === "c^c") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let channelname = argus[0];
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
 	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
@@ -162,7 +162,7 @@ client.on('messageCreate', (message) => {
         }
         
         if (commando === "k^k") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let nick = argus[0];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
 	    let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
@@ -185,7 +185,7 @@ client.on('messageCreate', (message) => {
         }
         
         if (commando === "d^c") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let channelname = argus[0];
             let num = argus[1];
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
@@ -214,7 +214,7 @@ client.on('messageCreate', (message) => {
         const commandos = arguss.shift().toLowerCase();
         
         if (commandos === "d$m") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let nick = arguss[0];
             let dm = arguss[1];
             let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
@@ -236,7 +236,7 @@ client.on('messageCreate', (message) => {
         }
         
         if (commandos === "s$m$") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let b = arguss[0];
             let channelname = arguss[1];
 	    let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
@@ -258,7 +258,7 @@ client.on('messageCreate', (message) => {
         }
         
         if (commandos === "s$e$") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let title = arguss[0];
             let description = arguss[1];
             let author = arguss[2];
@@ -302,7 +302,7 @@ client.on('messageCreate', (message) => {
         }
         
 	if (commandos === "e$e$") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let otitle = arguss[0];
             let odescription = arguss[1];
 	    let ntitle = arguss[2];
@@ -356,7 +356,7 @@ client.on('messageCreate', (message) => {
         }
 	
 	if (commandos === "d$e$") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let otitle = arguss[0];
             let odescription = arguss[1];
             let channelname = arguss[2];
@@ -389,7 +389,7 @@ client.on('messageCreate', (message) => {
         }
 	
         if (commandos === "d$m$") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let b = arguss[0];
             let channelname = arguss[1];
             let channelid = message.guild.channels.cache.find(i => i.name === channelname);
@@ -415,7 +415,7 @@ client.on('messageCreate', (message) => {
         }
         
         if (commandos === "e$m$") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let b = arguss[0];
             let c = arguss[1];
             let channelname = arguss[2];
@@ -445,7 +445,7 @@ client.on('messageCreate', (message) => {
         }
 
 	if (commandos === "dm$e$") {
-	    if (message.channel.type != 'dm') {
+	    if (message.channel.type != 'DM') {
             let nick = arguss[0];
 	    let title = arguss[1];
             let description = arguss[2];
