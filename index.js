@@ -10,13 +10,20 @@ client.user.setPresence({ activities: [{ name: "Git Gud", type: "PLAYING" }], st
 });
 
 client.on('guildMemberAdd', member => {
-	var rand = Math.floor(Math.random() * 1000);
-        let setnick = 'Helot' + rand;
+	var setnick = 'Helot1';
         const welcomeEmbed = new MessageEmbed();
         welcomeEmbed.setColor('#EB6305');
         welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Lacedaemon.");
         member.guild.channels.cache.find(i => i.name === 'formal').send({ embeds: [welcomeEmbed] });
-        member.setNickname(setnick);
+        for (var x = 1; x<101; x++) {
+	if (memberlist.includes(',' + 'Helot' + x + ',')) {
+	}
+	else {
+	var setnick = 'Helot' + x;
+	var x = 101;
+	}
+	}
+	member.setNickname(setnick);
 	member.roles.add(member.guild.roles.cache.find(role => role.name === "Helot"));
 });
 
