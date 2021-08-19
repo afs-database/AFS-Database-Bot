@@ -52,9 +52,25 @@ client.on('messageCreate', (message) => {
             message.channel.send({files: ["https://c.tenor.com/867r5xBn3ogAAAAC/monica-friends.gif"]});
         }
 	
+	
+	if (msg.toString().indexOf("scribe is gay")!=-1) {
+
+            message.channel.send({files: ["https://c.tenor.com/bCn4WFSUrtUAAAAC/no-you-working.gif"]});
+        }
+	
+	if (msg.toString().indexOf("who is scribe")!=-1) {
+
+            message.channel.send({files: ["https://c.tenor.com/-BVQhBulOmAAAAAC/bruce-almighty-morgan-freeman.gif"]});
+        }
+	
 	if (msg.toString().indexOf("tree")!=-1) {
 
             message.channel.send({files: ["https://c.tenor.com/q2mE8ylO3FAAAAAS/jean-baptiste-show-ibonek.gif"]});
+        }
+	
+	if (msg.toString().indexOf("bomb")!=-1) {
+
+            message.channel.send({files: ["https://c.tenor.com/u8jwYAiT_DgAAAAC/boom-bomb.gif"]});
         }
 	
 	if (msg.toString().indexOf("chicken")!=-1) {
