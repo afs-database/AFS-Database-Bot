@@ -409,7 +409,7 @@ client.on('messageCreate', (message) => {
 			let odescription = arguss[1];
 			let channelname = arguss[2];
 			let channelid = message.guild.channels.cache.find(i => i.name === channelname);
-			let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^
+			let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 			
 			let chan = message.channel.name;
 			if (chan == 'audit-log') {
