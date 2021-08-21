@@ -5,7 +5,7 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_
 	partials: ["CHANNEL", "GUILD_MEMBER", "MESSAGE", "REACTION", "USER"]
 });
 
-client.on('ready', () => 
+client.on('ready', () => {
 	client.user.setPresence({ activities: [{ name: "Git Gud", type: "PLAYING" }], status: "online" })
 });
 
