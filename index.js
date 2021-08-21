@@ -11,7 +11,8 @@ client.on('ready', () =>
 
 client.on('guildMemberAdd', member => {
 	var setnick = 'Helot1';
-        const welcomeEmbed = new MessageEmbed();
+        let memberlist = ',' + member.guild.members.cache.map(m=>m.displayName).join(',') + ',';
+	const welcomeEmbed = new MessageEmbed();
         welcomeEmbed.setColor('#EB6305');
         welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Lacedaemon.");
         member.guild.channels.cache.find(i => i.name === 'formal').send({ embeds: [welcomeEmbed] });
