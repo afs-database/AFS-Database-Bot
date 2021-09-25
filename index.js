@@ -544,7 +544,7 @@ client.on('messageCreate', (message) => {
 	
 	}
 	catch(error){
-		message.channel.send(`I almost crashed`);
+		message.channel.send(`I almost crashed`+error.message);
 	}
 });
 
