@@ -197,9 +197,15 @@ client.on('messageCreate', (message) => {
 			let memberlist = ',' + message.guild.members.cache.map(m=>m.displayName).join(',') + ',';
 			let chan = message.channel.name;
 			if (chan == 'audit-log') {
-				message.guild.channels.cache.find(i => i.name === 'formal').send(`${nick} has been kicked from the server.`);
-				nickmember.kick();
-				message.channel.send(`${nick} has been kicked.`);
+				if (memberlist.includes(',' + nick + ',')) {
+					message.guild.channels.cache.find(i => i.name === 'formal').send(`${nick} has been kicked from the server.`);
+					nickmember.kick();
+					message.channel.send(`${nick} has been kicked.`);
+				} 
+				else {
+					message.channel.send(`${nick} is not a valid nickname of a user in this server. Message of departure has been sent.`);
+					message.guild.channels.cache.find(i => i.name === 'formal').send(`${nick} has left the server and has been purged from my database.`);
+				}
 			} 
 			else {
 				message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
