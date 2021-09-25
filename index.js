@@ -40,7 +40,7 @@ client.on('guildMemberRemove', member => {
 });
 
 client.on('messageCreate', (message) => {
-        try{
+        
         const msg = message.content.toLowerCase();
 	
         const args = message.content.trim().split(/ +/g);
@@ -552,9 +552,6 @@ client.on('messageCreate', (message) => {
 		}
 	}
 	
-	}
-	catch(error){
-		message.channel.send(`I almost crashed`);
 	}
 });
 
