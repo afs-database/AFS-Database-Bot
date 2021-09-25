@@ -28,10 +28,6 @@ client.on('guildMemberAdd', member => {
 	member.roles.add(member.guild.roles.cache.find(role => role.name === "Helot"));
 });
 
-
-//client.on('error', console.error);
-
-
 client.on('guildMemberRemove', member => {
         const leaveEmbed = new MessageEmbed();
         leaveEmbed.setColor('#EB6305');
@@ -552,7 +548,7 @@ client.on('messageCreate', (message) => {
 		}
 	}
 	
-	}
+
 });
 
 client.login(process.env.BOT_TOKEN);
