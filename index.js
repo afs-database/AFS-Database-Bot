@@ -9,8 +9,6 @@ client.on('ready', () => {
 	client.user.setPresence({ activities: [{ name: "Git Gud", type: "PLAYING" }], status: "online" })
 });
 
-client.on('error', console.error);
-
 client.on('guildMemberAdd', member => {
 	var setnick = 'Helot1';
         let memberlist = ',' + member.guild.members.cache.map(m=>m.displayName).join(',') + ',';
