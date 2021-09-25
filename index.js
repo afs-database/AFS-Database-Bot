@@ -29,7 +29,7 @@ client.on('guildMemberAdd', member => {
 });
 
 
-client.on('error', console.error);
+//client.on('error', console.error);
 
 
 client.on('guildMemberRemove', member => {
