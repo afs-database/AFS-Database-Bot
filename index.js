@@ -544,7 +544,7 @@ client.on('messageCreate', (message) => {
 	
 	}
 	catch(error){
-		message.channel.send(`"I almost crashed from this message: **"+message+"**\n • Error Type: **"+error.name+"**\n • Error: **"+error.message+"**\n • File Name: **"+error.fileName+"**\n • Line Number: **"+error.lineNumber+"**"`+error.message);
+		message.channel.send(`"I almost crashed from this message: **"+message.content;
 	}
 });
 
