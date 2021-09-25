@@ -28,6 +28,10 @@ client.on('guildMemberAdd', member => {
 	member.roles.add(member.guild.roles.cache.find(role => role.name === "Helot"));
 });
 
+
+client.on('error', message.guild.channels.cache.find(i => i.name === 'error-reporting').send(`I almost crashed. Fix your shit. \nError code: MESSAGE`));
+
+
 client.on('guildMemberRemove', member => {
         const leaveEmbed = new MessageEmbed();
         leaveEmbed.setColor('#EB6305');
