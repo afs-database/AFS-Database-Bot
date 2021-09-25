@@ -29,7 +29,7 @@ client.on('guildMemberAdd', member => {
 });
 
 
-client.on('error', message.guild.channels.cache.find(i => i.name === 'error-reporting').send(`I almost crashed. Fix your shit. \nError code: MESSAGE`));
+client.on('error', console.error);
 
 
 client.on('guildMemberRemove', member => {
