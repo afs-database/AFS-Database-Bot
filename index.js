@@ -324,7 +324,7 @@ client.on('messageCreate', (message) => {
 			//.addField('Inline field title', 'Some value here', true)
 			.setImage(image)
 			.setTimestamp()
-			.setFooter(footer, '');
+			.setFooter(footer, 'https://cdn.discordapp.com/attachments/404119742232657921/894585896270188654/image0.png');
 			let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 			let chan = message.channel.name;
 			if (chan == 'audit-log') {
@@ -377,7 +377,7 @@ client.on('messageCreate', (message) => {
 					//.addField('Inline field title', 'Some value here', true)
 					.setImage(nimage)
 					.setTimestamp()
-					.setFooter(nfooter, '');
+					.setFooter(nfooter, 'https://cdn.discordapp.com/attachments/404119742232657921/894585896270188654/image0.png');
 					channelid.messages.fetch({limit: 99}).then(msg => {
 						const aospecMessage = msg.filter(msg => msg.embeds[0]);
 						const ospecMessage = aospecMessage.filter(msg => msg.embeds[0].description.includes(odescription));
@@ -530,7 +530,7 @@ client.on('messageCreate', (message) => {
 				//.addField('Inline field title', 'Some value here', true)
 				.setImage(image)
 				.setTimestamp()
-				.setFooter(footer, '');
+				.setFooter(footer, 'https://cdn.discordapp.com/attachments/404119742232657921/894585896270188654/image0.png');
 				if (memberlist.includes('^' + nick + '^')) {
 					message.channel.send(`Embed DM has been sent to ${nickmember}.`);
 					nickmember.send({ embeds: [exampleEmbed] });
