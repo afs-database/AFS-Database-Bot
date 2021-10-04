@@ -314,7 +314,7 @@ client.on('messageCreate', (message) => {
 			//.setURL('https://discord.js.org/')
 			.setAuthor(author, authorpic, authorpic)
 			.setDescription(description)
-			//.setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
+			.setThumbnail('https://cdn.discordapp.com/attachments/404119742232657921/894585896270188654/image0.png')
 			//.addFields(
 			//        { name: 'Regular field title', value: 'Some value here' },
 			//        { name: '\u200B', value: '\u200B' },
@@ -367,7 +367,7 @@ client.on('messageCreate', (message) => {
 					//.setURL('https://discord.js.org/')
 					.setAuthor(nauthor, nauthorpic, nauthorpic)
 					.setDescription(ndescription)
-					//.setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
+					.setThumbnail('https://cdn.discordapp.com/attachments/404119742232657921/894585896270188654/image0.png')
 					//.addFields(
 					//        { name: 'Regular field title', value: 'Some value here' },
 					//        { name: '\u200B', value: '\u200B' },
@@ -520,7 +520,7 @@ client.on('messageCreate', (message) => {
 				//.setURL('https://discord.js.org/')
 				.setAuthor(author, authorpic, authorpic)
 				.setDescription(description)
-				//.setThumbnail('https://cdn.discordapp.com/icons/391183651649486848/a_a2fc07c28a76c4aae91d4fa38ff567c8.png?size=512')
+				.setThumbnail('https://cdn.discordapp.com/attachments/404119742232657921/894585896270188654/image0.png')
 				//.addFields(
 				//        { name: 'Regular field title', value: 'Some value here' },
 				//        { name: '\u200B', value: '\u200B' },
