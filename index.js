@@ -21,7 +21,7 @@ client.on('guildMemberAdd', member => {
 			if (memberlist.includes(',' + 'Helot' + x + ',')) {
 			} 
 			else {
-				var setnick = 'Cadet' + x;
+				var setnick = 'Helot' + x;
 				var x = 101;
 			}
 		}
