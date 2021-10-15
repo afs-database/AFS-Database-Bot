@@ -26,7 +26,7 @@ client.on('guildMemberAdd', member => {
 			}
 		}
 		member.setNickname(setnick);
-		member.roles.add(member.guild.roles.cache.find(role => role.name === "Helot"));
+		//member.roles.add(member.guild.roles.cache.find(role => role.name === "Helot"));
 	}
 	catch(error){
 		member.guild.channels.cache.find(i => i.name === 'error-reporting').send(`I almost crashed. Fix your shit.`);
