@@ -16,7 +16,7 @@ client.on('guildMemberAdd', member => {
 		const welcomeEmbed = new MessageEmbed();
 		welcomeEmbed.setColor('#EB6305');
 		welcomeEmbed.setDescription("<@" + member.user + "> has joined the server of Lacedaemon.");
-		member.guild.channels.cache.find(i => i.name === 'formal;').send({ embeds: [welcomeEmbed] });
+		member.guild.channels.cache.find(i => i.name === 'formal').send({ embeds: [welcomeEmbed] });
 		for (var x = 1; x<101; x++) {
 			if (memberlist.includes(',' + 'Helot' + x + ',')) {
 			} 
