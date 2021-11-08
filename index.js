@@ -396,16 +396,26 @@ client.on('messageCreate', (message) => {
 			let title = arguss[0];
 			let description = arguss[1];
 			let author = arguss[2];
-			let authorpic = arguss[3];
+			var authorpic = arguss[3];
 			let image = arguss[4];
 			let footer = arguss[5];
 			let channelname = arguss[6];
+			let nickmember = message.guild.members.cache.find(member => member.displayName === author);
+			let memberlist = '^' + message.guild.members.cache.map(m=>m.displayName).join('^') + '^';
 				if (authorpic.includes(' ')) {
 					message.channel.send(`Invalid author avatar.`);
 				} else {
 					if (image.includes(' ')) {
 						message.channel.send(`Invalid image.`);
 					} else {
+						if (authorpic) {
+						} else {
+							if (memberlist.includes('^' + author + '^')) {
+								var authorpic = nickmember.displayAvatarURL();
+							} else {
+								message.channel.send(`${author} is not a valid nickname of a user in this server. No author avatar will be posted.`);
+							}
+						}
 						
 						const exampleEmbed = new MessageEmbed()
 						.setColor('#EB6305')
@@ -450,19 +460,29 @@ client.on('messageCreate', (message) => {
 			let ntitle = arguss[2];
 			let ndescription = arguss[3];
 			let nauthor = arguss[4];
-			let nauthorpic = arguss[5];
+			var nauthorpic = arguss[5];
 			let nimage = arguss[6];
 			let nfooter = arguss[7];
 			let channelname = arguss[8];
 			let channelid = message.guild.channels.cache.find(i => i.name === channelname);
 			let chanlist = '^' + message.guild.channels.cache.map(m=>m.name).join('^') + '^';
 			let chan = message.channel.name;
+			let nickmember = message.guild.members.cache.find(member => member.displayName === nauthor);
+			let memberlist = '^' + message.guild.members.cache.map(m=>m.displayName).join('^') + '^';
 			if (nauthorpic.includes(' ')) {
 				message.channel.send(`Invalid author avatar.`);
 			} else {
 				if (nimage.includes(' ')) {
 					message.channel.send(`Invalid image.`);
 				} else {
+					if (nauthorpic) {
+					} else {
+						if (memberlist.includes('^' + nauthor + '^')) {
+							var nauthorpic = nickmember.displayAvatarURL();
+						} else {
+							message.channel.send(`${nauthor} is not a valid nickname of a user in this server. No author avatar will be posted.`);
+						}
+					}
 					if (chan == 'audit-log') {
 						if (chanlist.includes('^' + channelname + '^')) {
 							const exampleEmbed = new MessageEmbed()
@@ -749,11 +769,12 @@ client.on('messageCreate', (message) => {
 			let title = arguss[1];
 			let description = arguss[2];
 			let author = arguss[3];
-			let authorpic = arguss[4];
+			var authorpic = arguss[4];
 			let image = arguss[5];
 			let footer = arguss[6];
 			let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
 			let memberlist = '^' + message.guild.members.cache.map(m=>m.displayName).join('^') + '^';
+			let authornickmember = message.guild.members.cache.find(member => member.displayName === author);
 			let chan = message.channel.name;
 			if (authorpic.includes(' ')) {
 				message.channel.send(`Invalid author avatar.`);
@@ -761,6 +782,14 @@ client.on('messageCreate', (message) => {
 				if (image.includes(' ')) {
 					message.channel.send(`Invalid image.`);
 				} else {
+					if (authorpic) {
+					} else {
+						if (memberlist.includes('^' + author + '^')) {
+							var authorpic = authornickmember.displayAvatarURL();
+						} else {
+							message.channel.send(`${author} is not a valid nickname of a user in this server. No author avatar will be posted.`);
+						}
+					}
 					if (chan == 'audit-log') {
 						const exampleEmbed = new MessageEmbed()
 						.setColor('#EB6305')
@@ -802,12 +831,13 @@ client.on('messageCreate', (message) => {
 			let ntitle = arguss[2];
 			let ndescription = arguss[3];
 			let nauthor = arguss[4];
-			let nauthorpic = arguss[5];
+			var nauthorpic = arguss[5];
 			let nimage = arguss[6];
 			let nfooter = arguss[7];
 			let nick = arguss[8];
 			let nickmember = message.guild.members.cache.find(member => member.displayName === nick);
 			let memberlist = '^' + message.guild.members.cache.map(m=>m.displayName).join('^') + '^';
+			let authornickmember = message.guild.members.cache.find(member => member.displayName === nauthor);
 			let chan = message.channel.name;
 			if (nauthorpic.includes(' ')) {
 				message.channel.send(`Invalid author avatar.`);
@@ -815,6 +845,14 @@ client.on('messageCreate', (message) => {
 				if (nimage.includes(' ')) {
 					message.channel.send(`Invalid image.`);
 				} else {
+					if (nauthorpic) {
+					} else {
+						if (memberlist.includes('^' + nauthor + '^')) {
+							var nauthorpic = authornickmember.displayAvatarURL();
+						} else {
+							message.channel.send(`${nauthor} is not a valid nickname of a user in this server. No author avatar will be posted.`);
+						}
+					}
 					if (chan == 'audit-log') {
 						if (memberlist.includes('^' + nick + '^')) {
 							let channelid = nickmember.user.dmChannel;
@@ -858,7 +896,6 @@ client.on('messageCreate', (message) => {
 			message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
 		}
 	}
-
 });
 
 client.login(process.env.BOT_TOKEN);
