@@ -63,10 +63,6 @@ client.on('messageCreate', (message) => {
 		message.channel.send({files: ["https://c.tenor.com/-BVQhBulOmAAAAAC/bruce-almighty-morgan-freeman.gif"]});
         }
 	
-	if (msg.toString().indexOf("tree")!=-1&&message.channel.type != 'DM'&&message.channel.name != 'audit-log') {
-		message.channel.send({files: ["https://c.tenor.com/q2mE8ylO3FAAAAAS/jean-baptiste-show-ibonek.gif"]});
-        }
-	
 	if (msg.toString().indexOf("bomb")!=-1&&message.channel.type != 'DM'&&message.channel.name != 'audit-log') {
 		message.channel.send({files: ["https://c.tenor.com/u8jwYAiT_DgAAAAC/boom-bomb.gif"]});
         }
