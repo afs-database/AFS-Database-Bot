@@ -71,6 +71,30 @@ client.on('messageCreate', (message) => {
 		message.channel.send({files: ["https://c.tenor.com/lNJB-9zZ9roAAAAS/chicken-shoes.gif"]});
         }
 	
+	if (msg.toString().indexOf("tank")!=-1&&message.channel.type != 'DM'&&message.channel.name != 'audit-log') {
+		message.channel.send({files: ["https://c.tenor.com/S3ZidqJySZUAAAAS/tank-im-in-a-tank-and-you-re-not.gif"]});
+        }
+	
+	if (msg.toString().indexOf("git gud")!=-1&&message.channel.type != 'DM'&&message.channel.name != 'audit-log') {
+		message.channel.send({files: ["https://c.tenor.com/LSPbESNm8hYAAAAd/git-gud-video-games.gif"]});
+        }
+	
+	if (msg.toString().indexOf("scrub")!=-1&&message.channel.type != 'DM'&&message.channel.name != 'audit-log') {
+		message.channel.send({files: ["https://c.tenor.com/_Yo4-px_T00AAAAC/you-filthy-scrub.gif"]});
+        }
+	
+	if (msg.toString().indexOf("bologna buttcheeks")!=-1&&message.channel.type != 'DM'&&message.channel.name != 'audit-log') {
+		message.channel.send({files: ["https://c.tenor.com/CNlxV5HoLZ4AAAAC/banana-slap-butt.gif"]});
+        }
+	
+	if (msg.toString().indexOf("fuck you")!=-1&&message.channel.type != 'DM'&&message.channel.name != 'audit-log') {
+		message.channel.send({files: ["https://c.tenor.com/7R0cugwI7k0AAAAC/watch-your-mouth-watch-your-profanity.gif"]});
+        }
+	
+	if (msg.toString().indexOf("crazy")!=-1&&message.channel.type != 'DM'&&message.channel.name != 'audit-log') {
+		message.channel.send({files: ["https://c.tenor.com/S2AASnhew2gAAAAC/crazy-wat.gif"]});
+        }
+	
         const argus = message.content.trim().split(',');
         const commando = argus.shift().toLowerCase();
         
