@@ -55,6 +55,10 @@ client.on('messageCreate', (message) => {
 		message.channel.send({files: ["https://c.tenor.com/867r5xBn3ogAAAAC/monica-friends.gif"]});
         }
 	
+	if (msg.toString()=="h"&&message.channel.type != 'DM'&&message.channel.name != 'audit-log') {
+		message.channel.send({files: ["hhttps://c.tenor.com/o5zLICEb9cIAAAAd/when-the.gif"]});
+        }
+	
 	if (msg.toString().indexOf("scribe is gay")!=-1&&message.channel.type != 'DM'&&message.channel.name != 'audit-log') {
 		message.channel.send({files: ["https://c.tenor.com/bCn4WFSUrtUAAAAC/no-you-working.gif"]});
         }
