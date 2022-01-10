@@ -56,7 +56,7 @@ client.on('messageCreate', (message) => {
         }
 	
 	if (msg.toString()=="h"&&message.channel.type != 'DM'&&message.channel.name != 'audit-log') {
-		message.channel.send({files: ["hhttps://c.tenor.com/o5zLICEb9cIAAAAd/when-the.gif"]});
+		message.channel.send({files: ["https://c.tenor.com/o5zLICEb9cIAAAAd/when-the.gif"]});
         }
 	
 	if (msg.toString().indexOf("scribe is gay")!=-1&&message.channel.type != 'DM'&&message.channel.name != 'audit-log') {
