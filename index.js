@@ -847,6 +847,109 @@ client.on('messageCreate', (message) => {
 			message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
 		}
 	}
+	
+	if (commandos === "ec$om$") {
+			if (message.channel.type != 'DM') {
+				let c = arguss[0];
+				let channelname = arguss[1];
+				let c2 = arguss[2];
+				let channelname2 = arguss[3];
+				let c3 = arguss[4];
+				let channelname3 = arguss[5];
+				let c4 = arguss[6];
+				let channelname4 = arguss[7];
+				let c5 = arguss[8];
+				let channelname5 = arguss[9];
+				let channelid = message.guild.channels.cache.find(i => i.name === channelname);
+				let channelid2 = message.guild.channels.cache.find(i => i.name === channelname2);
+				let channelid3 = message.guild.channels.cache.find(i => i.name === channelname3);
+				let channelid4 = message.guild.channels.cache.find(i => i.name === channelname4);
+				let channelid5 = message.guild.channels.cache.find(i => i.name === channelname5);
+				let chanlist = '^' + message.guild.channels.cache.map(m => m.name).join('^') + '^';
+				let chan = message.channel.name;
+				if (chan == 'audit-log') {
+					setTimeout(function () {
+						if (chanlist.includes('^' + channelname + '^')) {
+							channelid.messages.fetch({ limit: 1 }).then(msg => {
+								const specMessage = msg.map(m => m.id).join('\n');
+								async function edit() {
+									const message = await channelid.messages.fetch(specMessage);
+									await message.edit(c);
+								}
+								edit();
+							});
+							message.channel.send(`First message has been edited.`);
+						} else {
+							message.channel.send(`${channelname} is not a valid channel in this server.`);
+						}
+					}, 3000);
+					setTimeout(function () {
+						if (chanlist.includes('^' + channelname2 + '^')) {
+							channelid2.messages.fetch({ limit: 1 }).then(msg2 => {
+								const specMessage2 = msg2.map(m2 => m2.id).join('\n');
+								async function edit2() {
+									const message2 = await channelid2.messages.fetch(specMessage2);
+									await message2.edit(c2);
+								}
+								edit2();
+							});
+							message.channel.send(`Second message has been edited.`);
+						} else {
+							message.channel.send(`${channelname2} is not a valid channel in this server.`);
+						}
+					}, 6000);
+					setTimeout(function () {
+						if (chanlist.includes('^' + channelname3 + '^')) {
+							channelid3.messages.fetch({ limit: 1 }).then(msg3 => {
+								const specMessage3 = msg3.map(m3 => m3.id).join('\n');
+								async function edit3() {
+									const message3 = await channelid3.messages.fetch(specMessage3);
+									await message3.edit(c3);
+								}
+								edit3();
+							});
+							message.channel.send(`Third message has been edited.`);
+						} else {
+							message.channel.send(`${channelname3} is not a valid channel in this server.`);
+						}
+					}, 9000);
+					setTimeout(function () {
+						if (chanlist.includes('^' + channelname4 + '^')) {
+							channelid4.messages.fetch({ limit: 1 }).then(msg4 => {
+								const specMessage4 = msg4.map(m4 => m4.id).join('\n');
+								async function edit4() {
+									const message4 = await channelid4.messages.fetch(specMessage4);
+									await message4.edit(c4);
+								}
+								edit4();
+							});
+							message.channel.send(`Fourth message has been edited.`);
+						} else {
+							message.channel.send(`${channelname4} is not a valid channel in this server.`);
+						}
+					}, 12000);
+					setTimeout(function () {
+						if (chanlist.includes('^' + channelname5 + '^')) {
+							channelid5.messages.fetch({ limit: 1 }).then(msg5 => {
+								const specMessage5 = msg5.map(m5 => m5.id).join('\n');
+								async function edit5() {
+									const message5 = await channelid5.messages.fetch(specMessage5);
+									await message5.edit(c5);
+								}
+								edit5();
+							});
+							message.channel.send(`Fifth message has been edited.`);
+						} else {
+							message.channel.send(`${channelname5} is not a valid channel in this server.`);
+						}
+					}, 15000);
+				} else {
+					message.channel.send(`${chan} is not a valid channel to use this command in, ***DUMBASS***.`);
+				}
+			} else {
+				message.channel.send(`Did you seriously just try to **DM** that command to me? You *have* to be the biggest idiot of all time. Gonna make a mark of that right here...`);
+			}
+		}
 
 	if (commandos === "e$edm$") {
 		if (message.channel.type != 'DM') {
